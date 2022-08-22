@@ -1,4 +1,12 @@
 
+/**
+ * Classe que representa um Gerente
+ * 
+ * 
+ * @author gabriel.pivoto
+ * @version 0.1
+ *
+ */
 public class Gerente extends Funcionario implements SalarioBonus{
 	
 	private int senha;
