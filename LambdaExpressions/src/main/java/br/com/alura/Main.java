@@ -5,6 +5,7 @@ import br.com.alura.utils.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * @author Gabriel Pivoto
@@ -32,8 +33,16 @@ public class Main {
         }
 
         //Duas das possíveis opções
-        contas.sort(new ComparadorTitular());
-        Collections.sort(contas, new ComparadorSaldo());
+        contas.sort(new Comparator<Conta>() { //classe anônima
+
+            @Override
+            public int compare(Conta o1, Conta o2) {
+                return o1.getTitular().compareTo(o2.getTitular());
+            }
+        });
+
+
+        //Collections.sort(contas, new ComparadorSaldo());
 
         System.out.println("\nDepois de ordenar: ");
         for (Conta conta:
