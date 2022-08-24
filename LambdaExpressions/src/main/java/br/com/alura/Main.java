@@ -32,6 +32,7 @@ public class Main {
             conta.extrato();
         }
 
+
         //Duas das possíveis opções
         contas.sort(new Comparator<Conta>() { //classe anônima
 
@@ -42,13 +43,30 @@ public class Main {
         });
 
 
+        //Outra forma mais simplificada do código acima
+        contas.sort(( c1,  c2) ->  c1.getTitular().compareTo(c2.getTitular()));
+
+        Comparator<Conta> comp = new Comparator<Conta>() {
+            @Override
+            public int compare(Conta o1, Conta o2) {
+                return Double.compare(o1.getSaldo(),o2.getSaldo());
+            }
+        };
+
+        Comparator<Conta> comp2 = (Conta c1, Conta c2) -> {
+            return Double.compare(c1.getSaldo(),c2.getSaldo());
+        };
+
+
         //Collections.sort(contas, new ComparadorSaldo());
 
         System.out.println("\nDepois de ordenar: ");
-        for (Conta conta:
-                contas) {
-            conta.extrato();
-        }
+
+        //Duas opções possíveis
+        //contas.forEach((conta) -> conta.extrato());
+
+        contas.forEach(Conta::extrato);
+
 
     }
 
