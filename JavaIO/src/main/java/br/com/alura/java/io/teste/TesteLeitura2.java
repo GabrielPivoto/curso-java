@@ -15,7 +15,7 @@ public class TesteLeitura2 {
             }
 
         }catch (Exception e){
-            System.out.println("Deu ruim");
+            System.out.println("Deu ruim!");
         }
 
 
