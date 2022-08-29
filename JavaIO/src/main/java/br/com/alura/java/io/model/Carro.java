@@ -1,6 +1,8 @@
 package br.com.alura.java.io.model;
 
-public class Carro {
+import java.io.Serializable;
+
+public class Carro implements Serializable {
 
     private String fabricante;
     private String modelo;
